@@ -51,7 +51,7 @@ pipeline {
                     def canProceedSCA = jsonResponse.canProceed
                     def vulnsTable = jsonResponse.vulnsTable
 
-                    def cleanVulnsTable = vulnsTable.replaceAll(/[[;0-9]*m/, '')
+                    def cleanVulnsTable = vulnsTable.replaceAll("\\u001B\\[[;\\d]*m", "")
 
                     echo "Vulnerabilities found during SCA:"
                     echo "${cleanVulnsTable}"
@@ -73,7 +73,7 @@ pipeline {
                     def canProceedSAST = jsonResponse.canProceed
                     def vulnsTable = jsonResponse.vulnsTable
 
-                    def cleanVulnsTable = vulnsTable.replaceAll(/[[;0-9]*m/, '')
+                    def cleanVulnsTable = vulnsTable.replaceAll("\\u001B\\[[;\\d]*m", "")
 
                     echo "Vulnerabilities found during SAST:"
                     echo "${cleanVulnsTable}"
@@ -86,5 +86,6 @@ pipeline {
         // Additional stages (e.g., deploy) can be added here
     }
 }
+
 
 
