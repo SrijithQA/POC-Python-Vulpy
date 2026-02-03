@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         CLIENT_ID = '23e4567-e89b-12d3-a456-426614174001'
-        CLIENT_SECRET = 'f04beba50f63a331a4732b18173aadaf'
-        APPLICATION_ID = '697f276b2ca6945276bc03f8'
+        CLIENT_SECRET = '67d4763ccd71b0d5c3acdd97e8ae7a1b'
+        APPLICATION_ID = '69824a3929d55d0f43c04e8d'
         SCA_API_URL = 'https://appsecops-api.intruceptlabs.com/api/v1/integrations/sca-scans'
         SAST_API_URL = 'https://appsecops-api.intruceptlabs.com/api/v1/integrations/sast-scans'
     }
@@ -86,6 +86,7 @@ pipeline {
         // Additional stages (e.g., deploy) can be added here
     }
 }
+
 
 
 
