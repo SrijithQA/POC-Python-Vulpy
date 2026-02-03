@@ -17,7 +17,7 @@ jobs:
       - name: Perform SAST Scan
         id: sast
         run: |
-          RESPONSE=$(curl -X POST             -H "Client-ID: ${{ secrets.INTRUCEPT_CLIENT_ID }}"             -H "Client-Secret: ${{ secrets.INTRUCEPT_CLIENT_SECRET }}"             -F "projectZipFile=@project.zip"             -F "applicationId=${{ secrets.INTRUCEPT_APPLICATION_ID }}"             -F "scanName=SAST Scan - ${{ github.sha }}"             -F "language=python"             https://appsecops-api.intruceptlabs.com/api/v1/integrations/sast-scans)          
+          RESPONSE=$(curl -X POST             -H "Client-ID: ${{ secrets.INTRUCEPT_CLIENT_ID }}"             -H "Client-Secret: ${{ secrets.INTRUCEPT_CLIENT_SECRET }}"             -F "projectZipFile=@project.zip"             -F "applicationId=${{ secrets.INTRUCEPT_APPLICATION_ID }}"             -F "scanName=Github-SAST Scan - ${{ github.sha }}"             -F "language=python"             https://appsecops-api.intruceptlabs.com/api/v1/integrations/sast-scans)          
           
           
           VULNS_TABLE=$(echo $RESPONSE | jq -r '.vulnsTable')
